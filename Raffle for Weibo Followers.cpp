@@ -2,8 +2,8 @@
 
 	2017/03/06
 	A1124 Raffle for Weibo Followers
-	ÌâÒâ£ºM¸öÌû×Ó£¬µÚÒ»¸öwinÎªS£¬Ö®ºóÃ¿µÚN¸öwin£»
-		  ÈôÓĞ»ñ½±ÕßÖØ¸´£¬Ôò++£»
+	é¢˜æ„ï¼šMä¸ªå¸–å­ï¼Œç¬¬ä¸€ä¸ªwinä¸ºSï¼Œä¹‹åæ¯ç¬¬Nä¸ªwinï¼›
+             è‹¥æœ‰è·å¥–è€…é‡å¤ï¼Œåˆ™++ï¼›
 
 --------------------------------------------------*/
 
@@ -20,22 +20,22 @@ int main()
 	ifstream cin("Input.txt");
 #endif
 
-	int Forwards_Number, Skip_Number, Index;//¸úÌûÊı£¬¼ä¸ô£¬µÚÒ»¸öwinµÄÏÂ±ê
+	int Forwards_Number, Skip_Number, Index;//è·Ÿå¸–æ•°ï¼Œé—´éš”ï¼Œç¬¬ä¸€ä¸ªwinçš„ä¸‹æ ‡
 	cin >> Forwards_Number >> Skip_Number >> Index;
 
-	if (Forwards_Number < Index)//ÈôÌûÊı²»¹»£¬ÔòÊä³ö
+	if (Forwards_Number < Index)//è‹¥å¸–æ•°ä¸å¤Ÿï¼Œåˆ™è¾“å‡º
 	{
 		cout << "Keep going...\n";
 		return 0;
 	}
 
-	string Nickname[1001];//ÊäÈë¸÷¸öÓÃ»§Ãû
+	string Nickname[1001];//è¾“å…¥å„ä¸ªç”¨æˆ·å
 	for (int i = 1; i <= Forwards_Number; ++i)	
 		cin >> Nickname[i];
 
-	int Count_Winner = 0;//ÒÑ»ñ½±ÈËÊı
-	string Winner_Name[1001];//ÒÑ»ñ½±ÕßĞòÁĞ
-	bool Ifsame;//ÊÇ·ñÒÑ»ñ½±
+	int Count_Winner = 0;//å·²è·å¥–äººæ•°
+	string Winner_Name[1001];//å·²è·å¥–è€…åºåˆ—
+	bool Ifsame;//æ˜¯å¦å·²è·å¥–
 	while (Index <= Forwards_Number)
 	{
 		do
@@ -45,12 +45,12 @@ int main()
 				if (Nickname[Index] == Winner_Name[j])
 				{
 					Ifsame = true;
-					++Index;//ÏàÍ¬£¬ÅĞ¶ÏÏÂÒ»¸ö
-					if (Index == Forwards_Number + 1)//Ñ°ÕÒÏÂ¸öÒç³öÊ±£¬½áÊø³ÌĞò
+					++Index;//ç›¸åŒï¼Œåˆ¤æ–­ä¸‹ä¸€ä¸ª
+					if (Index == Forwards_Number + 1)//å¯»æ‰¾ä¸‹ä¸ªæº¢å‡ºæ—¶ï¼Œç»“æŸç¨‹åº
 						return 0;
 					break;
 				}
-		} while (Ifsame);//Ñ­»·²éÑ¯Ñ¡ÖĞµÄÓÃ»§ÊÇ·ñ»ñ½±
+		} while (Ifsame);//å¾ªç¯æŸ¥è¯¢é€‰ä¸­çš„ç”¨æˆ·æ˜¯å¦è·å¥–
 	
 		++Count_Winner;
 		Winner_Name[Count_Winner] = Nickname[Index];
